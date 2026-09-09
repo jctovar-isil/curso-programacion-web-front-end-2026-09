@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=0.5, user-scalable=yes">
+	<title>ISIL - Ejemplo de Media Queries</title>
+	<style>
+		/* Móvil: hasta 512 px */
+		@media (min-width: 0px) and (max-width: 512px) {
+			main {
+				padding: 16px;
+				background-color: #dcfce7;
+				font-size: 1rem;
+			}
+
+			h1 {
+				font-size: 24px;
+			}
+		}
+
+		/* Tablet: hasta 768 px */
+		@media (min-width: 513px) and (max-width: 1024px) {
+			main {
+				padding: 24px;
+				background-color: #fef3c7;
+				font-size: 1.6rem;
+			}
+		}
+
+		/* Desktop: 1024 px o más */
+		@media (min-width: 1025px) {
+			main {
+				max-width: 1024px;
+				margin: 0 auto;
+				padding: 32px;
+				background-color: #031e40;
+				color:azure;
+				font-size: 2.4rem;
+			}
+		}
+
+		/* Desktop: 1024 px o más */
+		@media (print) {
+			main {
+				max-width: 1024px;
+				margin: 0 auto;
+				padding: 32px;
+				background-color: #ffffff;
+				color: rgb(157, 10, 10);
+				font-size: 2.4rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Ejemplo con viewport</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+			tincidunt, nunc at facilisis malesuada, justo mi porta erat. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
+            tincidunt, nunc at facilisis malesuada, justo mi porta erat.
+		</p>
+	</main>
+</body>
+</html>
