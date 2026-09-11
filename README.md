@@ -57,6 +57,9 @@ curso-programacion-web-front-end-2026-09/
 │
 ├── 01-Viewport-Flexbox-Grid-1/
 ├── 02-Tipografia-Multimedia-Forms-1l/
+├── 03-Aspectos-Generales-Javascript-1
+├── 03-Desarrollo-FullStack-API-Javascript-1
+├── ...
 ├── ...
 │
 └── README.md

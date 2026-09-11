@@ -1,0 +1,23 @@
+[
+  {
+    "nombre": "Firulais",
+    "especie": "Perro",
+    "raza": "Labrador",
+    "edad": 6,
+    "esSano": true
+  },
+  {
+    "nombre": "Michigan",
+    "especie": "Gato",
+    "raza": "Langora",
+    "edad": 4,
+    "esSano": true
+  },
+  {
+    "nombre": "Alvin",
+    "especie": "Ardilla",
+    "raza": "Clasica",
+    "edad": 2,
+    "esSano": false
+  }
+]
