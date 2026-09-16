@@ -5,7 +5,7 @@
     "raza": "Labrador",
     "edad": 6,
     "esSano": true,
-    "foto": "https://www.perrolabrador.net/wp-content/uploads/2015/03/labrador_pura_raza.jpg"
+    "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlMJZn4ZQsaubnuYJ-ZH3abynzVxICWu_29aUIxTHGcg&s=10"
   },
   {
     "nombre": "Michigan",
@@ -37,6 +37,14 @@
     "raza": "Cruzada",
     "edad": "12",
     "foto": "https://i.pinimg.com/736x/9e/ae/bc/9eaebcb50f972fddc936fe267170847b.jpg",
+    "esSano": true
+  },
+  {
+    "nombre": "Parlanchin",
+    "especie": "Ave",
+    "raza": "Loro",
+    "edad": "1",
+    "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTExRvWAz3Ek-QDEFDv78ruGpH87l0PJrRc3Bhw8c8IgnztzKMoV4kcBI&s=10",
     "esSano": true
   }
 ]
