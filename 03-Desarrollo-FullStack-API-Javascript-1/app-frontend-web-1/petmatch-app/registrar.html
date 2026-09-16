@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registrar mascota | PetMatch</title>
+    <link rel="stylesheet" href="styles/forms1.css">
+</head>
+<body>
+	<main class="card">
+		<h1>Registrar mascota</h1>
+		<p class="intro">Completa los datos de tu compañero.</p>
+		<form action="#" method="post">
+			<div class="grid">
+				<div class="field full">
+					<label for="nombre">Nombre</label>
+					<input id="nombre" name="nombre" type="text" value="Firulais" required>
+				</div>
+				<div class="field">
+					<label for="especie">Especie</label>
+					<input id="especie" name="especie" type="text" value="Perro" required>
+				</div>
+				<div class="field">
+					<label for="raza">Raza</label>
+					<input id="raza" name="raza" type="text" value="Labrador" required>
+				</div>
+				<div class="field">
+					<label for="edad">Edad</label>
+					<input id="edad" name="edad" type="number" min="0" value="6" required>
+				</div>
+				<div class="field">
+					<label for="foto">URL de la foto</label>
+					<input id="foto" name="foto" type="url" value="https://www.perrolabrador.net/wp-content/uploads/2015/03/labrador_pura_raza.jpg" required>
+				</div>
+				<label class="check full" for="esSano">
+					<input id="esSano" name="esSano" type="checkbox" checked>
+					¿La mascota está sana?
+				</label>
+			</div>
+			<button type="submit">Registrar mascota</button>
+		</form>
+	</main>
+</body>
+</html>
