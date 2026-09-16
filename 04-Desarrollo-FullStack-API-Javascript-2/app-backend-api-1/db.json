@@ -22,5 +22,21 @@
     "edad": 2,
     "esSano": false,
     "foto": "https://static.inaturalist.org/photos/61101998/medium.jpeg"
+  },
+  {
+    "nombre": "Gatinho",
+    "especie": "Gato",
+    "raza": "Persa",
+    "edad": 4,
+    "esSano": false,
+    "foto": "https://animall.com.mx/cdn/shop/articles/el_gato_persa_47a77703-2417-43bf-b7c5-da2b9bd9d143.jpg?v=1777068076"
+  },
+  {
+    "nombre": "Mancha",
+    "especie": "Perro",
+    "raza": "Cruzada",
+    "edad": "12",
+    "foto": "https://i.pinimg.com/736x/9e/ae/bc/9eaebcb50f972fddc936fe267170847b.jpg",
+    "esSano": true
   }
 ]
