@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paleta de colores</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --font-family-1: Roboto, 'Segoe UI', Verdana, Arial, sans-serif;
+      --cabecera-fondo: #BF1140;
+      --cuerpo-fondo: #FFFFFF;
+      --pie-fondo: #8C113E;
+      --titulo-cuerpo: #8C513B;
+      --subsecciones: #D99F7E;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--cuerpo-fondo);
+      color: #333;
+      font-family: var(--font-family-1);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 2rem;
+      background-color: var(--cabecera-fondo);
+      color: var(--cuerpo-fondo);
+      text-align: center;
+    }
+
+    main {
+      width: min(90%, 1000px);
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    h2 {
+      color: var(--titulo-cuerpo);
+    }
+
+    section {
+      margin-top: 1.5rem;
+      padding: 1rem 1.5rem;
+      border-left: 6px solid var(--subsecciones);
+      background-color: #fff8f5;
+    }
+
+    h3 {
+      margin-top: 0;
+      color: var(--subsecciones);
+    }
+
+    .iconos-ejemplo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .icono {
+      flex: 1 1 160px;
+      padding: 1rem;
+      color: var(--titulo-cuerpo);
+      text-align: center;
+      border: 1px solid var(--subsecciones);
+    }
+
+    .icono i {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--cabecera-fondo);
+      font-size: 2rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .efectos-ejemplo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .efecto {
+      padding: 1.25rem;
+      background-color: var(--cuerpo-fondo);
+      border: 1px solid var(--subsecciones);
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .efecto-color:hover {
+      background-color: var(--subsecciones);
+    }
+
+    .efecto-elevacion:hover {
+      transform: translateY(-8px);
+    }
+
+    .efecto-sombra:hover {
+      box-shadow: 8px 8px 0 var(--subsecciones);
+    }
+
+    .icono:hover i,
+    .efecto-icono:hover i {
+      color: var(--pie-fondo);
+      transform: scale(1.25) rotate(8deg);
+    }
+
+    footer {
+      padding: 1.25rem;
+      background-color: var(--pie-fondo);
+      color: var(--cuerpo-fondo);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Diseño web con color</h1>
+    <p>Una composición basada en una paleta cálida y contrastante.</p>
+  </header>
+
+  <main>
+    <h2>Importancia del color</h2>
+    <p>El color ayuda a organizar el contenido, comunicar emociones y mejorar la experiencia visual de una página web.</p>
+
+    <section>
+      <h3>Iconografía con Font Awesome</h3>
+      <div class="iconos-ejemplo">
+        <div class="icono"><i class="fa-solid fa-house" aria-hidden="true"></i>Inicio</div>
+        <div class="icono"><i class="fa-solid fa-palette" aria-hidden="true"></i>Color</div>
+        <div class="icono"><i class="fa-solid fa-heart" aria-hidden="true"></i>Favorito</div>
+        <div class="icono"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Contacto</div>
+        <div class="icono"><i class="fa-solid fa-circle-info" aria-hidden="true"></i>Información</div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Ejemplos de transiciones CSS</h3>
+      <div class="efectos-ejemplo">
+        <div class="efecto efecto-color">
+          <strong>Cambio de color</strong>
+          <p>Pasa el mouse para cambiar el fondo.</p>
+        </div>
+        <div class="efecto efecto-elevacion">
+          <strong>Elevación</strong>
+          <p>La tarjeta se desplaza hacia arriba.</p>
+        </div>
+        <div class="efecto efecto-sombra">
+          <strong>Sombra progresiva</strong>
+          <p>La sombra aparece suavemente.</p>
+        </div>
+        <div class="efecto efecto-icono">
+          <i class="fa-solid fa-hand-pointer" aria-hidden="true"></i>
+          <strong>Icono interactivo</strong>
+          <p>El icono cambia al pasar el mouse.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Armonía visual</h3>
+      <p>Los tonos seleccionados crean una identidad coherente entre la cabecera, el contenido y el pie de página.</p>
+    </section>
+
+    <section>
+      <h3>Jerarquía de contenidos</h3>
+      <p>Los colores de los títulos y las subsecciones permiten identificar rápidamente cada nivel de información.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 - Ejemplo de paleta de colores</p>
+  </footer>
+</body>
+</html>
