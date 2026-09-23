@@ -1,0 +1,193 @@
+/* Variables CSS y Estilo Base */
+
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --bg-gradient: linear-gradient(135deg, #667eea88 0%, #764ba2 100%);
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --background-color-progress-bar: #bc1253;
+}
+
+body {
+    margin: 10px;
+    font-family: Roboto, system-ui, -apple-system, sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+}
+
+/* Animacion de pista de progreso: Cuando se desplaza la página */
+
+.reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6px;
+    background: var(--background-color-progress-bar);
+    width: 100%;
+    z-index: 9999;
+    transform-origin: left;
+    animation: grow-progress linear 0.5s forwards;
+    animation-timeline: scroll(root block);
+}
+
+@keyframes grow-progress {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* Efecto de Glassmorphism (Cristal Esmerilado) */
+/* Solo aplica al formulario y a las tarjetas de mascotas */
+
+.form-container, .pet-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Transicion 3D con movimiento hacia arriba y elevacion de sombra */
+
+.pet-card {
+    transition: transform 0.4s
+                cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s
+                ease-in-out;
+    will-change: transform;
+}
+
+.pet-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Efecto de Ripple para el boton (requiere de Javascript) */
+
+.ripple-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-btn .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 600ms linear;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* TRANSICIÓN 1: Smooth Color & Font Weight en Botones */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, font-weight 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    font-weight: 700;
+    transform: scale(1.02);
+}
+
+/* TRANSICIÓN 2: Expand/Collapse en Focus de Inputs */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.form-input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.3);
+    transform: scale(1.01);
+}
+
+/* TRANSICIÓN 3: Crossfade (Opacidad y Visibilidad del Formulario/Respuesta) */
+.result-container {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.result-container.show {
+    opacity: 1;
+    visibility: visible;
+    animation: slideUpFade 0.6s ease forwards;
+}
+
+/* ANIMACIÓN 1: Keyframes Pulse en Badge */
+.badge-pulse {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #10b981;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+/* ANIMACIÓN 2: Entrance Slide & Fade-In */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ANIMACIÓN 3: Shake de Error */
+.shake-error {
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+
+/* ESTILO PARA EL INPUT EN CASO DE ERROR */
+.input-error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3) !important;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetMatch - Adopción de Mascotas</title>
+  <link rel="stylesheet" href="styles/contactenos.css">
+</head>
+<body>
+  <!-- Indicador de lectura atado al scroll -->
+  <div class="reading-progress-bar"></div>
+
+  <main class="main-container">
+    <header class="header">
+      <h1 class="title">PetMatch</h1>
+      <p class="subtitle">Encuentra a tu compañero ideal</p>
+    </header>
+
+    <!-- Tarjetas de mascotas con efecto Tilt y Glassmorphism -->
+    <section class="pet-cards-container">
+      <article class="pet-card">
+        <div class="pet-card-image">🐶</div>
+        <h3>Max</h3>
+        <p>Labrador - 2 años</p>
+        <span class="badge badge-pulse">Apto para adopción</span>
+      </article>
+    </section>
+
+    <!-- Formulario de evaluación -->
+    <section class="form-container">
+      <form id="adoptionForm">
+        <div class="form-group">
+          <label for="especie">Especie:</label>
+          <select id="especie" name="especie" class="form-input">
+            <option value="perro">Perro</option>
+            <option value="gato">Gato</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="edad">Edad de la mascota:</label>
+          <input type="number" id="edad" name="edad" class="form-input" placeholder="Ej. 2">
+        </div>
+
+        <div class="form-group">
+          <label for="estadoSalud">Estado de Salud:</label>
+          <select id="estadoSalud" name="estadoSalud" class="form-input">
+            <option value="bueno">Bueno / Vacunado</option>
+            <option value="regular">En tratamiento</option>
+          </select>
+        </div>
+
+        <button type="submit" id="btnSubmit" class="btn-primary ripple-btn">
+          Registrar Mascotas
+        </button>
+      </form>
+
+      <!-- Contenedor de respuesta -->
+      <div id="divResultado" class="result-container hidden">
+        <p id="resultadoTexto"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts/contactenos.js"></script>
+</body>
+</html>
