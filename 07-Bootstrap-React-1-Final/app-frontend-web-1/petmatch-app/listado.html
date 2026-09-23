@@ -1,76 +1,324 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>PetMatch | Listado de mascotas</title>
-	<style>
-		:root { --primary:#6c63ff; --dark:#25243a; --soft:#f4f3ff; --danger:#d64545; }
-		* { box-sizing:border-box; }
-		body { margin:0; min-height:100vh; padding:24px; font-family:Arial,sans-serif; color:var(--dark); background:linear-gradient(135deg,#e9e7ff,#fff7ed); }
-		.container { width:min(100%,1100px); margin:auto; }
-		header { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:22px; }
-		h1 { margin:0 0 6px; font-size:30px; } header p { margin:0; color:#6b697d; }
-		.card { background:#fff; border-radius:18px; padding:24px; box-shadow:0 12px 35px #403b7d22; }
-		form { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; align-items:end; margin-bottom:24px; }
-		.field { display:flex; flex-direction:column; gap:7px; } label { font-weight:700; font-size:14px; }
-		input,select { width:100%; padding:11px 12px; border:1px solid #d9d7e8; border-radius:9px; font:inherit; color:var(--dark); background:#fff; }
-		input:focus,select:focus { outline:3px solid #6c63ff33; border-color:var(--primary); }
-		.actions { display:flex; gap:8px; } button { border:0; border-radius:9px; padding:11px 16px; color:#fff; background:var(--primary); font-weight:700; cursor:pointer; }
-		button:hover { background:#574ee8; } button.secondary { background:#77758a; } button.danger { background:var(--danger); }
-		.table-wrap { overflow-x:auto; } table { width:100%; border-collapse:collapse; } th,td { padding:13px 10px; text-align:left; border-bottom:1px solid #eee; vertical-align:middle; } th { background:var(--soft); }
-		.pet-photo { width:58px; height:58px; border-radius:10px; object-fit:cover; background:var(--soft); } .status { font-weight:700; color:#23824a; } .status.no { color:var(--danger); }
-		#message { min-height:20px; margin:12px 0; color:#6b697d; } .empty { text-align:center; padding:28px; color:#6b697d; }
-		@media(max-width:800px) { form { grid-template-columns:repeat(2,1fr); } header { align-items:flex-start; flex-direction:column; } }
-		@media(max-width:480px) { body { padding:14px; } .card { padding:16px; } form { grid-template-columns:1fr; } }
-	</style>
-</head>
-<body>
-	<main class="container">
-		<header>
-			<div><h1>Listado de mascotas</h1><p>Administra las mascotas registradas en PetMatch.</p></div>
-			<button type="button" id="newBtn">+ Nueva mascota</button>
-		</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetMatch | Listado de mascotas</title>
+    <style>
+      :root {
+        --primary: #6c63ff;
+        --dark: #25243a;
+        --soft: #f4f3ff;
+        --danger: #d64545;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: 24px;
+        font-family: Arial, sans-serif;
+        color: var(--dark);
+        background: linear-gradient(135deg, #e9e7ff, #fff7ed);
+      }
+      .container {
+        width: min(100%, 1100px);
+        margin: auto;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 22px;
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 30px;
+      }
+      header p {
+        margin: 0;
+        color: #6b697d;
+      }
+      .card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 12px 35px #403b7d22;
+      }
+      form {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+        align-items: end;
+        margin-bottom: 24px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      label {
+        font-weight: 700;
+        font-size: 14px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 11px 12px;
+        border: 1px solid #d9d7e8;
+        border-radius: 9px;
+        font: inherit;
+        color: var(--dark);
+        background: #fff;
+      }
+      input:focus,
+      select:focus {
+        outline: 3px solid #6c63ff33;
+        border-color: var(--primary);
+      }
+      .actions {
+        display: flex;
+        gap: 8px;
+      }
+      button {
+        border: 0;
+        border-radius: 9px;
+        padding: 11px 16px;
+        color: #fff;
+        background: var(--primary);
+        font-weight: 700;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #574ee8;
+      }
+      button.secondary {
+        background: #77758a;
+      }
+      button.danger {
+        background: var(--danger);
+      }
+      .table-wrap {
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 13px 10px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+        vertical-align: middle;
+      }
+      th {
+        background: var(--soft);
+      }
+      .pet-photo {
+        width: 58px;
+        height: 58px;
+        border-radius: 10px;
+        object-fit: cover;
+        background: var(--soft);
+      }
+      .status {
+        font-weight: 700;
+        color: #23824a;
+      }
+      .status.no {
+        color: var(--danger);
+      }
+      #message {
+        min-height: 20px;
+        margin: 12px 0;
+        color: #6b697d;
+      }
+      .empty {
+        text-align: center;
+        padding: 28px;
+        color: #6b697d;
+      }
+      @media (max-width: 800px) {
+        form {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 480px) {
+        body {
+          padding: 14px;
+        }
+        .card {
+          padding: 16px;
+        }
+        form {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <div>
+          <h1>Listado de mascotas</h1>
+          <p>Administra las mascotas registradas en PetMatch.</p>
+        </div>
+        <button type="button" id="newBtn">+ Nueva mascota</button>
+      </header>
 
-		<section class="card">
-			<form id="petForm" hidden>
-				<input type="hidden" id="petId">
-				<div class="field"><label for="nombre">Nombre</label><input id="nombre" required></div>
-				<div class="field"><label for="especie">Especie</label><input id="especie" required></div>
-				<div class="field"><label for="raza">Raza</label><input id="raza" required></div>
-				<div class="field"><label for="edad">Edad</label><input id="edad" type="number" min="0" required></div>
-				<div class="field"><label for="foto">URL de foto</label><input id="foto" type="url" placeholder="https://..."></div>
-				<label><input id="esSano" type="checkbox" checked> Está sano</label>
-				<div class="actions"><button type="submit">Guardar</button><button type="button" class="secondary" id="cancelBtn">Cancelar</button></div>
-			</form>
-			<div id="message" role="status"></div>
-			<div class="table-wrap">
-				<table>
-					<thead><tr><th>Foto</th><th>Nombre</th><th>Especie</th><th>Raza</th><th>Edad</th><th>Estado</th><th>Acciones</th></tr></thead>
-					<tbody id="petList"><tr><td colspan="7" class="empty">Cargando mascotas...</td></tr></tbody>
-				</table>
-			</div>
-		</section>
-	</main>
-	<script>
-		const API = 'http://localhost:3000/api/mascotas';
-		const form = document.getElementById('petForm'), list = document.getElementById('petList'), message = document.getElementById('message');
-		const fields = ['nombre','especie','raza','edad','foto'];
-		const showMessage = text => { message.textContent = text; };
-		async function loadPets() {
-			try { const response = await fetch(API); if (!response.ok) throw new Error(); const pets = await response.json(); render(pets); }
-			catch { list.innerHTML = '<tr><td colspan="7" class="empty">No se pudo conectar con el API.</td></tr>'; showMessage('Verifica que el servidor esté ejecutándose en localhost:3000.'); }
-		}
-		function render(pets) {
-			if (!pets.length) { list.innerHTML = '<tr><td colspan="7" class="empty">No hay mascotas registradas.</td></tr>'; return; }
-			list.innerHTML = pets.map(p => `<tr><td><img class="pet-photo" src="${p.foto || ''}" alt="Foto de ${p.nombre}" onerror="this.style.visibility='hidden'"></td><td>${p.nombre}</td><td>${p.especie}</td><td>${p.raza}</td><td>${p.edad}</td><td class="status ${p.esSano ? '' : 'no'}">${p.esSano ? 'Sano' : 'Necesita atención'}</td><td><div class="actions"><button type="button" onclick="editPet('${p._id || p.id}')">Editar</button><button type="button" class="danger" onclick="deletePet('${p._id || p.id}')">Eliminar</button></div></td></tr>`).join('');
-		}
-		document.getElementById('newBtn').onclick = () => { form.reset(); document.getElementById('petId').value=''; document.getElementById('esSano').checked=true; form.hidden=false; };
-		document.getElementById('cancelBtn').onclick = () => form.hidden=true;
-		form.onsubmit = async e => { e.preventDefault(); const id=document.getElementById('petId').value; const data=Object.fromEntries(fields.map(f=>[f, f==='edad' ? Number(document.getElementById(f).value) : document.getElementById(f).value])); data.esSano=document.getElementById('esSano').checked; try { const r=await fetch(id ? `${API}/${id}` : API,{method:id?'PUT':'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); if(!r.ok) throw new Error(); form.hidden=true; showMessage('Mascota guardada correctamente.'); loadPets(); } catch { showMessage('No se pudo guardar la mascota.'); } };
-		window.editPet = async id => { try { const r=await fetch(`${API}/${id}`); const p=await r.json(); document.getElementById('petId').value=id; fields.forEach(f=>document.getElementById(f).value=p[f] ?? ''); document.getElementById('esSano').checked=!!p.esSano; form.hidden=false; } catch { showMessage('No se pudo cargar la mascota.'); } };
-		window.deletePet = async id => { if(!confirm('¿Eliminar esta mascota?')) return; try { const r=await fetch(`${API}/${id}`,{method:'DELETE'}); if(!r.ok) throw new Error(); showMessage('Mascota eliminada.'); loadPets(); } catch { showMessage('No se pudo eliminar la mascota.'); } };
-		loadPets();
-	</script>
-</body>
+      <section class="card">
+        <form id="petForm" hidden>
+          <input type="hidden" id="petId" />
+          <div class="field">
+            <label for="nombre">Nombre</label><input id="nombre" required />
+          </div>
+          <div class="field">
+            <label for="especie">Especie</label><input id="especie" required />
+          </div>
+          <div class="field">
+            <label for="raza">Raza</label><input id="raza" required />
+          </div>
+          <div class="field">
+            <label for="edad">Edad</label
+            ><input id="edad" type="number" min="0" required />
+          </div>
+          <div class="field">
+            <label for="foto">URL de foto</label
+            ><input id="foto" type="url" placeholder="https://..." />
+          </div>
+          <label><input id="esSano" type="checkbox" checked /> Está sano</label>
+          <div class="actions">
+            <button type="submit">Guardar</button
+            ><button type="button" class="secondary" id="cancelBtn">
+              Cancelar
+            </button>
+          </div>
+        </form>
+        <div id="message" role="status"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Foto</th>
+                <th>Nombre</th>
+                <th>Especie</th>
+                <th>Raza</th>
+                <th>Edad</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="petList">
+              <tr>
+                <td colspan="7" class="empty">Cargando mascotas...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script>
+      const API = "http://localhost:3000/api/mascotas";
+      const form = document.getElementById("petForm"),
+        list = document.getElementById("petList"),
+        message = document.getElementById("message");
+      const fields = ["nombre", "especie", "raza", "edad", "foto"];
+      const showMessage = (text) => {
+        message.textContent = text;
+      };
+      async function loadPets() {
+        try {
+          const response = await fetch(API);
+          if (!response.ok) throw new Error();
+          const pets = await response.json();
+          render(pets);
+        } catch {
+          list.innerHTML =
+            '<tr><td colspan="7" class="empty">No se pudo conectar con el API.</td></tr>';
+          showMessage(
+            "Verifica que el servidor esté ejecutándose en localhost:3000.",
+          );
+        }
+      }
+      function render(pets) {
+        if (!pets.length) {
+          list.innerHTML =
+            '<tr><td colspan="7" class="empty">No hay mascotas registradas.</td></tr>';
+          return;
+        }
+        list.innerHTML = pets
+          .map(
+            (p) =>
+              `<tr><td><img class="pet-photo" src="${p.foto || ""}" alt="Foto de ${p.nombre}" onerror="this.style.visibility='hidden'"></td><td>${p.nombre}</td><td>${p.especie}</td><td>${p.raza}</td><td>${p.edad}</td><td class="status ${p.esSano ? "" : "no"}">${p.esSano ? "Sano" : "Necesita atención"}</td><td><div class="actions"><button type="button" onclick="editPet('${p._id || p.id}')">Editar</button><button type="button" class="danger" onclick="deletePet('${p._id || p.id}')">Eliminar</button></div></td></tr>`,
+          )
+          .join("");
+      }
+      document.getElementById("newBtn").onclick = () => {
+        form.reset();
+        document.getElementById("petId").value = "";
+        document.getElementById("esSano").checked = true;
+        form.hidden = false;
+      };
+      document.getElementById("cancelBtn").onclick = () => (form.hidden = true);
+      form.onsubmit = async (e) => {
+        e.preventDefault();
+        const id = document.getElementById("petId").value;
+        const data = Object.fromEntries(
+          fields.map((f) => [
+            f,
+            f === "edad"
+              ? Number(document.getElementById(f).value)
+              : document.getElementById(f).value,
+          ]),
+        );
+        data.esSano = document.getElementById("esSano").checked;
+        try {
+          const r = await fetch(id ? `${API}/${id}` : API, {
+            method: id ? "PUT" : "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+          if (!r.ok) throw new Error();
+          form.hidden = true;
+          showMessage("Mascota guardada correctamente.");
+          loadPets();
+        } catch {
+          showMessage("No se pudo guardar la mascota.");
+        }
+      };
+      window.editPet = async (id) => {
+        try {
+          const r = await fetch(`${API}/${id}`);
+          const p = await r.json();
+          document.getElementById("petId").value = id;
+          fields.forEach(
+            (f) => (document.getElementById(f).value = p[f] ?? ""),
+          );
+          document.getElementById("esSano").checked = !!p.esSano;
+          form.hidden = false;
+        } catch {
+          showMessage("No se pudo cargar la mascota.");
+        }
+      };
+      window.deletePet = async (id) => {
+        if (!confirm("¿Eliminar esta mascota?")) return;
+        try {
+          const r = await fetch(`${API}/${id}`, { method: "DELETE" });
+          if (!r.ok) throw new Error();
+          showMessage("Mascota eliminada.");
+          loadPets();
+        } catch {
+          showMessage("No se pudo eliminar la mascota.");
+        }
+      };
+      loadPets();
+    </script>
+  </body>
 </html>
