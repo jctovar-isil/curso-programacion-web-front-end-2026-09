@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISIL :: PetMatch - Adopción de Mascotas</title>
+
+  <!-- Carga de Fuentes desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>PetMatch</h1>
+    <p class="tagline">Encuentra a tu compañero ideal</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget ultricies nunc nisl eget urna.</p>
+  </header>
+  <main id="app">
+    <!-- El contenido multimedia y formulario irán aquí -->
+    <section class="media-section">
+        <h2>Mascotas en Adopción</h2>
+
+        <!-- SVG: Gráfico vectorial escalable -->
+        <img src="assets/hero-logo.svg" alt="Logotipo de PetMatch" width="80" height="80">
+
+        <!-- Imagen Responsiva Básica con Lazy Loading -->
+        <figure>
+            <img src="assets/dog.webp" style="max-width: 100%; height: auto;">
+            <figcaption>Max: 2 años, vacunado y juguetón.</figcaption>
+        </figure>
+
+        <!-- Imagen Responsiva Intermedia (<picture> con formatos de última generación) -->
+        <picture>
+            <!--<source srcset="assets/dog.webp" type="image/webp">-->
+            <img src="assets/dogs.jpg" alt="Perro rescatado en adopción" loading="lazy" width="400" height="300">
+        </picture>
+    </section>
+
+    <!-- Etiqueta Video Nativa con Fallback -->
+    <section class="video-section">
+        <h3>Conoce nuestro centro de adopción</h3>
+        <!-- Video con el primer frame y autoplay -->
+        <!-- <video controls autoplay muted loop poster="assets/dog.jpg" width="640" height="360"> -->
+        <!-- Video con ancho al 100% autoplay y resolucion 16:9 -->
+        <video controls autoplay loop poster="assets/dog.jpg" style="width: 100%; aspect-ratio: 16/9;">
+            <source src="assets/intro.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video. Por favor, actualiza tu navegador.
+        </video>
+    </section>
+
+  </main>
+</body>
+</html>

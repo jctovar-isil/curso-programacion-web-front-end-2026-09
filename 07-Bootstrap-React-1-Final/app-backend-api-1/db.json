@@ -1,0 +1,50 @@
+[
+  {
+    "nombre": "Firulais",
+    "especie": "Perro",
+    "raza": "Labrador",
+    "edad": 6,
+    "esSano": true,
+    "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlMJZn4ZQsaubnuYJ-ZH3abynzVxICWu_29aUIxTHGcg&s=10"
+  },
+  {
+    "nombre": "Michigan",
+    "especie": "Gato",
+    "raza": "Langora",
+    "edad": 4,
+    "esSano": true,
+    "foto": "https://dinastiacachorros.com.co/wp-content/uploads/2026/02/Img-Dinastia-del-Cachorro-Raza-Individual-Caracteristicas-Gato-Angora-2.png"
+  },
+  {
+    "nombre": "Alvin",
+    "especie": "Ardilla",
+    "raza": "Clasica",
+    "edad": 2,
+    "esSano": false,
+    "foto": "https://static.inaturalist.org/photos/61101998/medium.jpeg"
+  },
+  {
+    "nombre": "Gatinho",
+    "especie": "Gato",
+    "raza": "Persa",
+    "edad": 4,
+    "esSano": false,
+    "foto": "https://animall.com.mx/cdn/shop/articles/el_gato_persa_47a77703-2417-43bf-b7c5-da2b9bd9d143.jpg?v=1777068076"
+  },
+  {
+    "nombre": "Mancha",
+    "especie": "Perro",
+    "raza": "Cruzada",
+    "edad": "12",
+    "foto": "https://i.pinimg.com/736x/9e/ae/bc/9eaebcb50f972fddc936fe267170847b.jpg",
+    "esSano": true
+  },
+  {
+    "nombre": "Parlanchin",
+    "especie": "Ave",
+    "raza": "Loro",
+    "edad": "1",
+    "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTExRvWAz3Ek-QDEFDv78ruGpH87l0PJrRc3Bhw8c8IgnztzKMoV4kcBI&s=10",
+    "esSano": true
+  }
+]

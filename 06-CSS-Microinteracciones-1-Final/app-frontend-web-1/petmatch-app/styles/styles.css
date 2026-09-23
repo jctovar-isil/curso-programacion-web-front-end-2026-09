@@ -1,0 +1,37 @@
+/* Configuracion Base y Unidades Relativas */
+html {
+    font-size: 16px; /* 1rem = 16px por defecto */
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;  /* Espaciado entre líneas */
+    color: #2d3748; /* Color de texto principal */
+    margin: 0; /* Eliminar margen por defecto */
+    padding: 1.5rem; /* Espaciado interno */
+}
+
+h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem; /* Tamaño de fuente grande para títulos */
+    font-weight: 700; /* Negrita (0-1000), o le puedo colocar normal, bold, bolder */
+    line-height: 1.2; /* Espaciado entre líneas para títulos */
+    letter-spacing: -0.02em; /* Espaciado entre letras */
+    color: #1a202c; /* Color de texto para títulos */
+}
+
+.tagline {
+    font-style: italic; /* Estilo de fuente en cursiva */
+    color: #4a5568; /* Color de texto secundario */
+}
+
+code, .ticket-id {
+    font-family: 'Fira Code', monospace; /* Fuente monoespaciada */
+    font-size: 0.875rem; /* ~14px */
+    background-color: #edf2f7; /* Fondo gris claro */
+    padding: 0.2rem 0.4rem; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+
+

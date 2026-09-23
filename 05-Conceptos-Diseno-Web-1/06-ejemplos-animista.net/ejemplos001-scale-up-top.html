@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ISIL - Ejemplo de CSS Animaciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            /*
+            display: flex;
+            */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+        /* Agregar Animacion CSS Estilos: scale-up-top
+            Este estilo hace que la imagen se escale desde la parte 
+            superior al hacer hover sobre ella.
+            Ver: https://animista.net/play/basic/scale/scale-up-top
+         */
+        .scale-up-top {
+            /* Cuando es transicion, comienza con la palabra transition */
+            animation: scale-up-top 5.4s both infinite;
+        }
+        @keyframes scale-up-top {
+            0% {
+                transform: scale(0.5) rotate(0deg);
+                transform-origin: 50% 0%;
+            }
+            50% {
+                transform: scale(2) rotate(180deg);
+                transform-origin: 50% 0%;
+            }
+            100% {
+                transform: scale(1) rotate(360deg);
+                transform-origin: 50% 0%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+	<h1>Mi imagen</h1>
+    <div align="center" style="top:50%; position:relative;">
+	    <img class="scale-up-top" src="imgs/isil-ecala-logo.webp" alt="Imagen de ejemplo">
+    </div>
+</body>
+</html>

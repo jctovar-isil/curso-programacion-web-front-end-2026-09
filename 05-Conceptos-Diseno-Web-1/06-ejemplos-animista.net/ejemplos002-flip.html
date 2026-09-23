@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ISIL - Ejemplo de CSS Animaciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            /*
+            display: flex;
+            */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            /* Ejemplo de transicion */
+            transition: transform 1.3s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.5);
+        }
+        /* Agregar Animacion CSS Estilos: flip-horizontal-bottom
+            Este estilo hace que la imagen se gire horizontalmente desde la parte 
+            inferior al hacer hover sobre ella.
+            Ver: https://animista.net/play/basic/flip/flip-horizontal-bottom
+         */
+        .flip-horizontal-bottom {
+            animation: flip-horizontal-bottom 2.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;
+        }
+        @keyframes flip-horizontal-bottom {
+            0% {
+                transform: rotateX(0deg);
+            }
+            100% {
+                transform: rotateX(180deg);
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var imgLogo = document.getElementById("imgLogo");
+            imgLogo.addEventListener("click", function() {
+                this.classList.toggle("flip-horizontal-bottom");
+            });
+        });
+    </script>
+</head>
+<body>
+	<h1>Mi imagen</h1>
+    <div align="center" style="top:50%; position:relative;">
+	    <img id="imgLogo" class="flip-horizontal-bottom" src="imgs/isil-ecala-logo.webp" alt="Imagen de ejemplo">
+    </div>
+</body>
+
+</html>

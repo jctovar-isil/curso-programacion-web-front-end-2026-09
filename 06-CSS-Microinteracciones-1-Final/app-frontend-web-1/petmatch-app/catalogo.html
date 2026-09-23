@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PetMatch | Catálogo de mascotas</title>
+	<link rel="stylesheet" href="styles/forms1.css">
+    <script src="scripts/api-pets-v1.js" defer></script>
+	<style>
+		.catalogo { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+		.catalogo__encabezado { text-align: center; margin-bottom: 2rem; }
+		.catalogo__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+		.mascota { overflow: hidden; border-radius: 12px; background: #fff; box-shadow: 0 3px 12px #0002; }
+		.mascota__foto { width: 100%; height: 220px; object-fit: cover; display: block; }
+		.mascota__contenido { padding: 1rem; }
+		.mascota__nombre { margin: 0 0 .5rem; color: #333; }
+		.mascota__datos { margin: 0 0 1rem; line-height: 1.7; }
+		.estado { display: inline-block; padding: .3rem .7rem; border-radius: 999px; font-size: .9rem; font-weight: bold; }
+		.estado--sano { color: #176b35; background: #d9f5e2; }
+		.estado--revision { color: #875900; background: #fff0c2; }
+		.mensaje { text-align: center; padding: 1.5rem; }
+	</style>
+</head>
+<body>
+	<main class="catalogo">
+		<header class="catalogo__encabezado">
+			<h1>Catálogo de mascotas</h1>
+			<p>Encuentra a tu próximo compañero en PetMatch.</p>
+		</header>
+		<section id="catalogo-mascotas" class="catalogo__grid" aria-live="polite">
+			<p class="mensaje">Cargando mascotas...</p>
+		</section>
+	</main>
+
+	<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            cargarMascotas();
+        });
+	</script>
+</body>
+</html>

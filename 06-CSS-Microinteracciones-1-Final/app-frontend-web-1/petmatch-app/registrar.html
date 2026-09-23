@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registrar mascota | PetMatch</title>
+    <link rel="stylesheet" href="styles/forms1.css">
+	<script src="scripts/api-pets-v1.js" defer></script>
+</head>
+<body>
+	<main class="card">
+		<h1>Registrar mascota</h1>
+		<p class="intro">Completa los datos de tu compañero.</p>
+		<form action="#" method="post">
+			<div class="grid">
+				<div class="field full">
+					<label for="nombre">Nombre</label>
+					<input id="nombre" name="nombre" type="text" value="" required placeholder="Ingresa el nombre de tu mascota">
+				</div>
+				<div class="field">
+					<label for="especie">Especie</label>
+					<select id="especie" name="especie" required placeholder="Selecciona una especie">
+						<option value="" selected>Selecciona una especie</option>
+						<option value="Perro">Perro</option>
+						<option value="Gato">Gato</option>
+						<option value="Ave">Ave</option>
+						<option value="Reptil">Reptil</option>
+						<option value="Pez">Pez</option>
+					</select>
+				</div>
+				<div class="field">
+					<label for="raza">Raza</label>
+					<input id="raza" name="raza" type="text" value="" required placeholder="Ingresa la raza de tu mascota">
+				</div>
+				<div class="field">
+					<label for="edad">Edad</label>
+					<input id="edad" name="edad" type="number" min="0" value="0" required>
+				</div>
+				<div class="field full">
+					<label for="foto">URL de la foto</label>
+					<input id="foto" name="foto" type="url" value="" required placeholder="https://ejemplo.com/fotodetmascota.jpg">
+				</div>
+				<label class="check full" for="esSano">
+					<input id="esSano" name="esSano" type="checkbox" checked>
+					¿La mascota está sana?
+				</label>
+			</div>
+			<button id="registrar" type="submit">Registrar mascota</button>
+		</form>
+	</main>
+</body>
+</html>
